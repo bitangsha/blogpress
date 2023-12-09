@@ -1,12 +1,31 @@
 package com.blogpress.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+import jakarta.validation.constraints.Size;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity(name="user_details")
 public class User {
 	
+	@Id
+	@GeneratedValue
 	private int id;
 	
+	@Size(min=3, message="[Email id must be more than 3 characters]")
+	@JsonProperty("email_id")
+	@Column(name="EMAILID")
 	private String emailId;
 	
+	@Size(min=3, message="[Name must be more than 3 characters]")
+	@JsonProperty("user_name")
+	@Column(name="username")
 	private String name;
+	
 	
 	private char[] password;
 	

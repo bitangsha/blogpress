@@ -1,0 +1,1 @@
+insert into user_details(id, emailid, username, password) values(1001, 'bitangsha2014@gmail.com', 'bitangsha', '123456');
