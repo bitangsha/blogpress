@@ -1,5 +1,8 @@
 package com.blogpress.models;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -8,6 +11,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity(name="user_details")
 public class User {
@@ -26,7 +30,19 @@ public class User {
 	@Column(name="username")
 	private String name;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy = "user")   //user - which field in post entity owns this relationship ?
+	private List<Post> posts;
 	
+	
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
+	}
+
 	private char[] password;
 	
 	public User(int id, String emailId, String name, char[] password) {
