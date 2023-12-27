@@ -21,6 +21,19 @@ public class Post {
 	@JsonIgnore
 	private User user;
 		
+	
+	
+	public Post() {
+		super();
+	}
+
+	public Post(int id, String content, User user) {
+		super();
+		this.id = id;
+		this.content = content;
+		this.user = user;
+	}
+
 	public User getUser() {
 		return user;
 	}

@@ -14,9 +14,9 @@ public class UserDaoService {
 	private static List<User> users = new ArrayList<>();
 	
 	static {
-		users.add(new User(1, "abc@gmail.com", "John", null));
-		users.add(new User(2, "def@outlook.com", "Richard", null));
-		users.add(new User(3, "ghi@protonmail.com", "Darla", null));
+		users.add(new User(1, "abc@gmail.com", "John", null, null));
+		users.add(new User(2, "def@outlook.com", "Richard", null, null));
+		users.add(new User(3, "ghi@protonmail.com", "Darla", null, null));
 	}
 	
 	private int usersCount=users.size();

@@ -45,11 +45,20 @@ public class User {
 
 	private char[] password;
 	
-	public User(int id, String emailId, String name, char[] password) {
+	
+	
+	public User() {
+		super();
+	}
+
+	public User(int id, @Size(min = 3, message = "[Email id must be more than 3 characters]") String emailId,
+			@Size(min = 3, message = "[Name must be more than 3 characters]") String name, List<Post> posts,
+			char[] password) {
 		super();
 		this.id = id;
 		this.emailId = emailId;
 		this.name = name;
+		this.posts = posts;
 		this.password = password;
 	}
 
